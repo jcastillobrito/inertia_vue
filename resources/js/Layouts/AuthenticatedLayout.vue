@@ -29,8 +29,15 @@ const showingNavigationDropdown = ref(false);
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                                <NavLink 
+                                    :href="route('dashboard')" 
+                                    :active="route().current('dashboard')">
                                     Dashboard
+                                </NavLink>
+                                <NavLink 
+                                    :href="route('chirps.index')" 
+                                    :active="route().current('chirps.index')">
+                                    Chirps
                                 </NavLink>
                             </div>
                         </div>
@@ -109,11 +116,17 @@ const showingNavigationDropdown = ref(false);
                 <!-- Responsive Navigation Menu -->
                 <div
                     :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown }"
-                    class="sm:hidden"
-                >
+                    class="sm:hidden">
+
                     <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
+                        </ResponsiveNavLink>
+                    </div>
+
+                    <div class="pt-2 pb-3 space-y-1">
+                        <ResponsiveNavLink :href="route('chirps.index')" :active="route().current('chirps.index')">
+                            Chirps
                         </ResponsiveNavLink>
                     </div>
 
